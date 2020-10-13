@@ -6,24 +6,26 @@
     <title>Document</title>
 </head>
 <body>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <div class="container">
          <div class="row">
             <div class="col-md-5">
                 <img src="image/hotel room.jpg" class="img-fluid" alt="picture">
             </div>
             <div class="col-md-5">
-               <form action="MYBOOKING.php" method="post" class="form">
+            <h4 class="display-5 font-weight-bold text-dark text-center">Register as Admin</h4>
+               <form action="OutputAdmin.php" method="post" class="form">
                   <div class="form-group">
-                     <label for="Name" class="col-sm-3 col-form-label ">Name</label>
-                     <input type="text" class="form-control" id="nama" name="Name">
+                     <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK">
                   </div>
                   <div class="form-group">
-                     <label for="Check-in" class="col-sm-3 col-form-label">Check-in</label>
-                     <input type="date" class="form-control" id="CheckIn" name="Check-in">
+                     <input type="text" class="form-control" id="nama" name="nama" placeholder="Name">
                   </div>
                   <div class="form-group">
-                     <label for="Duration" class="col-sm-3 col-form-label">Duration</label>
-                     <input type="text" class="form-control" id="duration" name="Duration">
+                     <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                     <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
                   </div>
                   <div class="form-group">
                      <label for="choice" class="col-sm-3 col-form-label">Room Type</label>
