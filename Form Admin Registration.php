@@ -9,6 +9,9 @@
 <div class="container">
          <div class="row">
             <div class="col-md-5">
+                <img src="image/hotel room.jpg" class="img-fluid" alt="picture">
+            </div>
+            <div class="col-md-5">
                <form action="MYBOOKING.php" method="post" class="form">
                   <div class="form-group">
                      <label for="Name" class="col-sm-3 col-form-label ">Name</label>
@@ -49,9 +52,6 @@
                     <input type="submit" class="btn btn-primary btn-md col-md" value="Book"></input>
                   </div>
                 </form>
-              </div>
-              <div class="col-md-5">
-                <img src="image/hotel room.jpg" class="img-fluid" alt="picture">
               </div>
           </div>
       </div>
