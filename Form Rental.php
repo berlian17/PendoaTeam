@@ -34,7 +34,7 @@
                         <a class="nav-link" href="#">Maria</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Richard</a>
+                        <a class="nav-link" href="InputAdmin.php">Richard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Rivaldi</a>
