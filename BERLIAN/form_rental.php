@@ -22,54 +22,42 @@
     <div class="topnav">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <a class="navbar-brand" href="#">CENTRAL</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" href="Form Rental.php">Berlian</a>
+                        <a class="nav-link active" href="homepage.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Maria</a>
+                        <a class="nav-link" href="item_list.php">Item</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="InputAdmin.php">Richard</a>
+                        <a class="nav-link" href="list_user.php">User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Rivaldi</a>
+                        <a class="nav-link" href="list_transaction.php">Transaction</a>
                     </li>
                 </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
         </nav>
     </div>
 
     <!-- Container -->
     <div class="container mt-5 mb-5 p-4">
-        <h2>Rental Form</h2>
+        <h2><b>Rental Form</b></h2>
         <p>Please fill in our Rental Application Form in order to express your interest in renting a property.</p>
         <hr class="hr1">
 
         <!-- Form -->
         <div class="row mt-4">
             <div class="col-md-8">
-                <form action="Form Rental (output).php" method="post" class="form needs-validation" novalidate>
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="firstName">First name</label>
-                            <input type="text" class="form-control" id="inputName" name="firstName" required>
-                            <div class="invalid-feedback">
-                                First name is required.
-                            </div>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="lastName">Last name</label>
-                            <input type="text" class="form-control" id="inputName" name="lastName" required>
-                            <div class="invalid-feedback">
-                                Last name is required.
-                            </div>
-                        </div>
-                    </div>
+                <form action="list_transaction.php" method="post" class="form needs-validation" novalidate>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="inputEmail" name="email" required>
@@ -79,32 +67,20 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="number" min="0" class="form-control" id="inputPhone" name="phone" required>
+                        <input type="text" class="form-control" id="inputPhone" name="phone" required>
                         <div class="invalid-feedback">
                             Phone number is required.
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label for="address">Current Address</label>
-                            <input type="text" class="form-control" id="inputAddress" name="street" placeholder="Street Address" required>
+                            <label for="address">Address</label>
+                            <textarea class="form-control" name="address" id="inputAddress" cols="30" rows="10" placeholder="Current Address" required></textarea>
                             <div class="invalid-feedback">
-                                Street address is required.
+                                Address is required.
                             </div>
                         </div>
-                        <div class="col-md-5">
-                            <input type="text" class="form-control" id="inputCity" name="city" placeholder="City" required>
-                            <div class="invalid-feedback">
-                                City is required.
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <input type="text" class="form-control" id="inputRegion" name="region" placeholder="Region" required>
-                            <div class="invalid-feedback">
-                                Region is required.
-                            </div>
-                        </div>
-                        <div class="col-md-2">
+                        <div class="col-md-6">
                             <input type="text" class="form-control" id="inputZip" name="zip" placeholder="Zip Code" required>
                             <div class="invalid-feedback">
                                 Zip code is required.
@@ -117,6 +93,10 @@
                         <div class="invalid-feedback">
                             Rent Amount is required.
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalPrice">Total Price</label>
+                        <input type="text" class="form-control" id="TP" name="totalPrice" disabled>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
@@ -138,18 +118,7 @@
                     </div>
                     <hr class="hr2">
                     <div class="form-group">
-                        <label for="payment">Payment</label>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" value="Credit card" id="check1" name="payment" required>
-                            <label for="check1">Credit card</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" value="Debit card" id="check2" name="payment" required>
-                            <label for="check2">Debit card</label>
-                        </div>
-                        <div class="invalid-feedback">
-                            Payment is required.
-                        </div>
+                        <h3><b>Payment</b></h3>
                     </div>
                     <div class="form-group">
                         <label for="nameCard">Name on card</label>
@@ -161,7 +130,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label for="numberCard">Credit card number</label>
+                            <label for="numberCard">Debit card number</label>
                             <input type="number" min="0" class="form-control" id="inputNumberCard" name="numberCard" required>
                             <div class="invalid-feedback">
                                 Credit card number is required.
@@ -184,7 +153,7 @@
                     </div>
                     <hr class="hr2">
                     <div>
-                        <input type="submit" value="Submit" class="btn btn-primary col-md mb-2">
+                        <input type="submit" name="Submit" value="Submit" class="btn btn-primary col-md mb-2">
                     </div>
                 </form>
             </div>
@@ -193,31 +162,35 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-head">
-                        <img src="Image/concrete pump.jpg" alt="image" class="img-fluid">
+                        <img src="concrete pump.jpg" alt="image" class="img-fluid">
                     </div>
                     <div class="card-body">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="table-active text-center" colspan="3">DETAIL INFORMATION</th>
+                                    <th class="table-active text-center" colspan="3">VEHICLE INFORMATION</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><b>TYPE</b></td>
-                                    <td colspan="2">CONCRETE PUMP SCHWING SP 2800 HDRD</td>
+                                    <td colspan="2"></td>
                                 </tr>
                                 <tr>
                                     <td><b>CAPACITY</b></td>
-                                    <td colspan="2">58 M3/H</td>
+                                    <td colspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>PRICE</b></td>
+                                    <td colspan="2"></td>
                                 </tr>
                                 <tr>
                                     <td><b>AVAILABILITY</b></td>
-                                    <td colspan="2">YES</td>
+                                    <td colspan="2"></td>
                                 </tr>
                                 <tr>
-                                    <td><b>POSITION</b></td>
-                                    <td colspan="2">GUDANG ALAT BERAT</td>
+                                    <td><b>LOCATION</b></td>
+                                    <td colspan="2"></td>
                                 </tr>
                             </tbody>
                         </table>
