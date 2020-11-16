@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Rental form</title>
     <style>
+        .navbar {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
         div.container {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
@@ -18,6 +21,13 @@
     </style>
 </head>
 <body>
+<?php
+    session_start();
+    if(!isset($_SESSION['username'])) {
+        header("Location: sign_in.php");
+    }
+?>
+
     <!-- Navbar -->
     <div class="topnav">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
@@ -28,7 +38,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" href="homepage.php">Home</a>
+                        <a class="nav-link active" href="../homepage.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="item_list.php">Item</a>
@@ -57,7 +67,7 @@
         <!-- Form -->
         <div class="row mt-4">
             <div class="col-md-8">
-                <form action="list_transaction.php" method="post" class="form needs-validation" novalidate>
+                <form action="created.php" method="post" class="form needs-validation" novalidate>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="inputEmail" name="email" required>

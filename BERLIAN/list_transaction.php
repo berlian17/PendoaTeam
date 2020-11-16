@@ -6,11 +6,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>List Transaction</title>
     <style>
+        .navbar {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
         div.container {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
         hr.hr1 {
             border-top: 3px solid;
+        }
+        th, td {
+            text-align: center;
         }
     </style>
 </head>
@@ -25,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" href="homepage.php">Home</a>
+                        <a class="nav-link active" href="../homepage.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="item_list.php">Item</a>
@@ -45,41 +51,18 @@
         </nav>
     </div>
 
-    <?php
-        include "../connection.php";
-        if(isset($_POST['Submit'])) {
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
-            $address = $_POST['address'];
-            $zip = $_POST['zip'];
-            $amount = $_POST['amount'];
-            $dateOut = $_POST['dateOut'];
-            $dateIn = $_POST['dateIn'];
-            $nameCard = $_POST['nameCard'];
-            $numberCard = $_POST['numberCard'];
-            $expiration = $_POST['expiration'];
-            $securityCode = $_POST['securityCode'];
-
-            // Insert data
-            if (mysqli_query($conn, "INSERT INTO rental (email, phone, address, zip_code, amount, date_out, date_in, debit_card_number, name_card, expiration, security_code, created_at) VALUES ('" . $email . "', " . $phone . ", '" . $address . "', " . $zip . ", " . $amount . ", '" . $dateOut . "', '" . $dateIn . "', " . $numberCard . ", '" . $nameCard . "', '" . $expiration . "', " . $securityCode .", NOW())")) {
-                echo "<script>alert('Data tersimpan');</script>";
-            } else {
-                echo "<script>alert('Gagal tersimpan');</script>";
-            }
-        }
-    ?>
-
     <!-- Container -->
     <div class="container mt-5">
         <h2 class="pt-4"><b>List Transaction</b></h2>
         <hr class="hr1">
 
         <div class="row mt-3">
-            <table class="table">
+            <table class="table m-3">
                 <thead class="table-active">
                     <tr>
                         <th>Transaction_id</th>
                         <th>Customer_id</th>
+                        <th>Item_id</th>
                         <th>Total Price</th>
                         <th>Created_at</th>
                         <th>Action</th>
@@ -88,6 +71,8 @@
                 <tbody>
                     <tr>
                         <?php
+                            include "../connection.php";
+
                             $query = mysqli_query($conn, "SELECT * FROM rental") or die("Query salah");
                             foreach ($query as $data) {
                         ?>
@@ -95,6 +80,7 @@
                     <tr>
                         <td><?= $data['rental_id'] ?></td>
                         <td><?= $data['customer_id'] ?></td>
+                        <td><?= $data['item_id'] ?></td>
                         <td><?= $data['total_price'] ?></td>
                         <td><?= $data['created_at'] ?></td>
                         <td><a href="form_rental(edit).php?rental_id=<?= $data['rental_id'] ?>"

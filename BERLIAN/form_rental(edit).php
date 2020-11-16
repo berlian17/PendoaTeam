@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Form Edit</title>
     <style>
+        .navbar {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
         div.container {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
@@ -28,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" href="homepage.php">Home</a>
+                        <a class="nav-link active" href="../homepage.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="item_list.php">Item</a>
@@ -48,6 +51,14 @@
         </nav>
     </div>
 
+    <?php
+        include "../connection.php";
+        $id = $_GET['rental_id'];
+
+        $query = mysqli_query($conn, "SELECT * FROM rental WHERE rental_id = $id") or die("Query salah");
+        foreach ($query as $data) {
+?>
+
     <!-- Container -->
     <div class="container mt-5 mb-5 p-4">
         <h2><b>Transaction detail</b></h2>
@@ -56,17 +67,17 @@
         <!-- Form -->
         <div class="row mt-4">
             <div class="col-md-8">
-                <form action="form_rental(output).php" method="post" class="form needs-validation" novalidate>
+                <form action="update.php" method="post" class="form needs-validation" novalidate>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" name="email" required>
+                        <input type="email" class="form-control" id="inputEmail" name="email" value="<?= $data['email']?>" required>
                         <div class="invalid-feedback">
                             Email is required.
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="text" class="form-control" id="inputPhone" name="phone" required>
+                        <input type="text" class="form-control" id="inputPhone" name="phone" value="<?= $data['phone']?>" required>
                         <div class="invalid-feedback">
                             Phone number is required.
                         </div>
@@ -74,33 +85,42 @@
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label for="address">Address</label>
-                            <textarea class="form-control" name="address" id="inputAddress" cols="30" rows="10" placeholder="Current Address" required></textarea>
+                            <textarea class="form-control" name="address" id="inputAddress" cols="30" rows="10" placeholder="Current Address" value="<?= $data['address']?>" required></textarea>
                             <div class="invalid-feedback">
                                 Address is required.
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" id="inputZip" name="zip" placeholder="Zip Code" required>
+                            <input type="text" class="form-control" id="inputZip" name="zip" placeholder="Zip Code" value="<?= $data['zip_code']?>" required>
                             <div class="invalid-feedback">
                                 Zip code is required.
                             </div>
                         </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control invisible" name="rental_id" value="<?= $data['rental_id']?>">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control invisible" name="customer_id" value="<?= $data['customer_id']?>">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control invisible" name="item_id" value="<?= $data['item_id']?>">
+                        </div>
                     </div>
                     <div class="form-group mt-3">
                         <label for="amount">Rent Amount</label>
-                        <input type="number" min="0" class="form-control" id="inputAmount" name="amount" required>
+                        <input type="number" min="0" class="form-control" id="inputAmount" name="amount" value="<?= $data['amount']?>" required>
                         <div class="invalid-feedback">
                             Rent Amount is required.
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="totalPrice">Total Price</label>
-                        <input type="text" class="form-control" id="TP" name="totalPrice" disabled>
+                        <input type="text" class="form-control" id="TP" name="totalPrice" value="<?= $data['total_price']?>" disabled>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="period">Rental Period</label>
-                            <input type="date" class="form-control" id="inputOut" name="dateOut" required>
+                            <input type="date" class="form-control" id="inputOut" name="dateOut" value="<?= $data['date_out']?>" required>
                             <small id="hint" class="form-text text-muted">Date OUT</small>
                             <div class="invalid-feedback">
                                 Date out is required.
@@ -108,7 +128,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="#" class="text-white">#</label>
-                            <input type="date" class="form-control" id="inputIn" name="dateIn" required>
+                            <input type="date" class="form-control" id="inputIn" name="dateIn" value="<?= $data['date_in']?>" required>
                             <small id="hint" class="form-text text-muted">Date DUE IN</small>
                             <div class="invalid-feedback">
                                 Date due in is required.
@@ -121,7 +141,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nameCard">Name on card</label>
-                        <input type="text" class="form-control" id="inputNameCard" name="nameCard" required>
+                        <input type="text" class="form-control" id="inputNameCard" name="nameCard" value="<?= $data['name_card']?>" required>
                         <small id="hint" class="form-text text-muted">Full name as displayed on card</small>
                         <div class="invalid-feedback">
                             Name on card is required.
@@ -130,21 +150,21 @@
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label for="numberCard">Debit card number</label>
-                            <input type="number" min="0" class="form-control" id="inputNumberCard" name="numberCard" required>
+                            <input type="number" min="0" class="form-control" id="inputNumberCard" name="numberCard" value="<?= $data['debit_card_number']?>" required>
                             <div class="invalid-feedback">
                                 Credit card number is required.
                             </div>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="Expiration">Expiration</label>
-                            <input type="date" class="form-control" id="inputExpiration" name="expiration" required>
+                            <input type="date" class="form-control" id="inputExpiration" name="expiration" value="<?= $data['expiration']?>" required>
                             <div class="invalid-feedback">
                                 Expiration is required.
                             </div>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="securityCode">Security Code</label>
-                            <input type="number" min="0" class="form-control" id="inputSecurityCode" name="securityCode" required>
+                            <input type="number" min="0" class="form-control" id="inputSecurityCode" name="securityCode" value="<?= $data['security_code']?>" required>
                             <div class="invalid-feedback">
                                 Security code is required.
                             </div>
@@ -164,23 +184,23 @@
                         <table class="table">
                             <tr>
                                 <td><b>Transaction id</b></td>
-                                <td colspan="2"></td>
+                                <td colspan="2"><?= $data['rental_id'] ?></td>
                             </tr>
                             <tr>
                                 <td><b>Item id</b></td>
-                                <td colspan="2"></td>
+                                <td colspan="2"><?= $data['item_id'] ?></td>
                             </tr>
                             <tr>
                                 <td><b>Customer id</b></td>
-                                <td colspan="2"></td>
-                            </tr>
-                            <tr>
-                                <td><b>Rental id</b></td>
-                                <td colspan="2"></td>
+                                <td colspan="2"><?= $data['customer_id'] ?></td>
                             </tr>
                         </table>
                     </div>
                 </div>
+
+                <?php
+    }
+                ?>
 
                 <div class="card mt-5">
                     <div class="card-head">

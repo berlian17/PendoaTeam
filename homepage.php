@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Homepage</title>
     <style>
+        .navbar {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
         footer {
             margin-top: 40px;
             padding: 40px;
@@ -35,7 +38,7 @@
                         <a class="nav-link" href="list_user.php">User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="list_transaction.php">Transaction</a>
+                        <a class="nav-link" href="BERLIAN/list_transaction.php">Transaction</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -65,7 +68,7 @@
             <div class="col-md-3" align="center">
                 <div class="card" align="center">
                     <div class="card-head">
-                        <img src="Berlian/forklift.png" width="200px" alt="image">
+                        <img src="Berlian/Image/forklift.png" width="200px" alt="image">
                     </div>
                     <div class="card-body">
                         <a class="btn btn-primary col-md" href="#" role="button">Forklift</a>
