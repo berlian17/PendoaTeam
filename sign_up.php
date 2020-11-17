@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Sign In</title>
+    <title>Sign Up</title>
     <style>
         .navbar {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -20,7 +20,7 @@
             height: 681px;
         }
         .card {
-            top: 150px;
+            top: 100px;
             left: 200px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
@@ -81,13 +81,13 @@
     <!-- Card -->
     <div class="card position-fixed m-5 col-md-4">
         <div class="card-body">
-            <h2><b>Sign In</b></h2>
+            <h2><b>Sign Up</b></h2>
             <hr class="hr1">
 
             <!-- Form -->
             <div class="row mt-4">
                 <div class="col-md-12">
-                    <form action="action-login.php" method="post" class="form needs-validation" novalidate>
+                    <form action="BERLIAN/created.php" method="post" class="form needs-validation" novalidate>
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="inputUsername" name="username" required>
@@ -102,19 +102,19 @@
                                 Password is required.
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="confirmation">Password Confirmation</label>
+                            <input type="password" class="form-control" id="inputconfirmation" name="confirmation" required>
+                            <div class="invalid-feedback">
+                                Password confirmation is required.
+                            </div>
+                        </div>
                         <hr class="hr2">
                         <div>
-                            <input type="submit" name="signin" value="Sign In" class="btn btn-primary col-md mb-2">
+                            <input type="submit" name="signup" value="Sign Up" class="btn btn-primary col-md mb-2">
                         </div>
-                        <div class="row col-sm-12">
-                            <div class="form-check form-check-inline col-sm-5">
-                                <input class="form-check-input" type="checkbox" id="Checkbox" name="remember">
-                                <label class="form-check-label" for="Checkbox">Remember me</label>
-                            </div>
-                            <div class="col-sm-5 ml-5" align="right">
-                                <a href=""><h6>Forgot password?</h6></a>
-                            </div>
-                        </div>
+                        <div class="form-group mt-2" align="center"><h6>Already have an account?</h6></div>
+                        <div class="form-group" align="center"><a href="sign_in.php" role="button"><h6>Sign In</h6></a></div>
                     </form>
                 </div>
             </div>

@@ -45,6 +45,13 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="action-logout.php">Log Out</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </div>
@@ -52,7 +59,7 @@
     <div class="jumbotron m-4 text-white rounded bg-dark">
         <div class="col-md-12">
             <h1 class="display-4 font-italic">Construction & Heavy Equipment Rental</h1>
-            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+            <p class="lead my-3">No matter what heavy equipment you are looking to rent, our rental advisors are here to help every step of the way. We make it convenient and simple to locate the right construction equipment for you. And, we offer flexibility on hauling charges. With over 4,000 suppliers and more than 10,000 nationwide locations, CENTRAL is the largest equipment rental logistics company. With real-time rental management technology, you can easily manage your account and equipment on the go, from any device.</p>
         </div>
     </div>
 
@@ -71,7 +78,7 @@
                         <img src="Berlian/Image/forklift.png" width="200px" alt="image">
                     </div>
                     <div class="card-body">
-                        <a class="btn btn-primary col-md" href="#" role="button">Forklift</a>
+                        <a class="btn btn-primary col-md" href="BERLIAN/form_rental.php" role="button">Forklift</a>
                     </div>
                 </div>
             </div>
@@ -79,7 +86,7 @@
             <div class="col-md-3" align="center">
                 <div class="card" align="center">
                     <div class="card-head">
-                        <img src="Berlian/forklift.png" width="200px" alt="image">
+                        <img src="" width="200px" alt="image">
                     </div>
                     <div class="card-body">
                         <a class="btn btn-primary col-md" href="#" role="button">Forklift</a>
@@ -90,7 +97,7 @@
             <div class="col-md-3" align="center">
                 <div class="card" align="center">
                     <div class="card-head">
-                        <img src="Berlian/forklift.png" width="200px" alt="image">
+                        <img src="" width="200px" alt="image">
                     </div>
                     <div class="card-body">
                         <a class="btn btn-primary col-md" href="#" role="button">Forklift</a>
@@ -101,7 +108,7 @@
             <div class="col-md-3" align="center">
                 <div class="card" align="center">
                     <div class="card-head">
-                        <img src="Berlian/forklift.png" width="200px" alt="image">
+                        <img src="" width="200px" alt="image">
                     </div>
                     <div class="card-body">
                         <a class="btn btn-primary col-md" href="#" role="button">Forklift</a>
@@ -114,7 +121,7 @@
             <div class="col-md-3" align="center">
                 <div class="card" align="center">
                     <div class="card-head">
-                        <img src="Berlian/forklift.png" width="200px" alt="image">
+                        <img src="" width="200px" alt="image">
                     </div>
                     <div class="card-body">
                         <a class="btn btn-primary col-md" href="#" role="button">Forklift</a>
@@ -125,7 +132,7 @@
             <div class="col-md-3" align="center">
                 <div class="card" align="center">
                     <div class="card-head">
-                        <img src="Berlian/forklift.png" width="200px" alt="image">
+                        <img src="" width="200px" alt="image">
                     </div>
                     <div class="card-body">
                         <a class="btn btn-primary col-md" href="#" role="button">Forklift</a>
@@ -136,7 +143,7 @@
             <div class="col-md-3" align="center">
                 <div class="card" align="center">
                     <div class="card-head">
-                        <img src="Berlian/forklift.png" width="200px" alt="image">
+                        <img src="" width="200px" alt="image">
                     </div>
                     <div class="card-body">
                         <a class="btn btn-primary col-md" href="#" role="button">Forklift</a>
@@ -147,7 +154,7 @@
             <div class="col-md-3" align="center">
                 <div class="card" align="center">
                     <div class="card-head">
-                        <img src="Berlian/forklift.png" width="200px" alt="image">
+                        <img src="" width="200px" alt="image">
                     </div>
                     <div class="card-body">
                         <a class="btn btn-primary col-md" href="#" role="button">Forklift</a>

@@ -13,10 +13,10 @@
                 session_start();
                 $_SESSION['username'] = $data['username'];
                 echo "<script>alert('Login berhasil');</script>";
-                header("Location: homepage.php");
+                header("Location:homepage.php");
             } else {
                 echo "<script>alert('Login gagal');</script>";
-                header("Location: sign_in.php");
+                header("Location:sign_in.php");
             }
             echo "<script>alert('Tidak ada data user');</script>";
         }

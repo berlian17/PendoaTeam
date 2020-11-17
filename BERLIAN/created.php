@@ -26,4 +26,27 @@
             header("Location:form_rental.php");
         }
     }
+
+    if(isset($_POST['signup'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $confirmation = $_POST['confirmation'];
+
+        // Insert data
+        $queryinsert = "INSERT INTO customer (username, password)
+                        VALUES ('" . $username . "', '" . $password . "')";
+
+        if ($password == $confirmation) {
+            if (mysqli_query($conn, $queryinsert)) {
+                echo "<script>alert('Data tersimpan');</script>";
+                header("Location:../sign_in.php");
+            } else {
+                echo "<script>alert('Gagal tersimpan');</script>";
+                header("Location:../sign_up.php");
+            }
+        } else {
+            echo "<script>alert('Password and confirmation password do not match');</script>";
+            header("Location:../sign_up.php");
+        }
+    }
 ?>
