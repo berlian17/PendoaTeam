@@ -1,0 +1,30 @@
+.main-col {
+    float: right;
+    width: 70%;
+    height: 697px;
+}
+.side-col {
+    float: left;
+    width: 30%;
+    height: 697px;
+}
+.card-index {
+    top: 150px;
+    left: 200px;
+}
+hr.hr1 {
+    border-top: 3px solid;
+}
+hr.hr2 {
+    border-top: 2px solid rgba(0,0,0,.1);
+}
+.carousel-item {
+    width: 400px;
+    height: 300px;
+}
+.carousel {
+    top: 200px;
+}
+.navbar {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
